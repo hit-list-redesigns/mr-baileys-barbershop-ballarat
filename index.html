@@ -80,8 +80,8 @@ svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-
 /* ---------- top rail ---------- */
 .rail{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--green-800) 92%,transparent);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
 .rail.scrolled{border-bottom-color:var(--green-line)}
-.rail .wrap{display:flex;align-items:center;gap:28px;height:76px}
-.logo{display:block;width:96px;flex:none}
+.rail .wrap{display:flex;align-items:center;gap:28px;height:84px}
+.logo{display:block;width:74px;flex:none;padding:2px 0}
 .logo img{width:100%;height:auto}
 .rail nav{display:flex;gap:26px;margin-left:12px}
 .rail nav a{text-decoration:none;font-size:.95rem;color:var(--on-green-2);transition:color .2s}
@@ -95,7 +95,7 @@ svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-
 .rail .btn{min-height:44px;padding:0 20px}
 
 /* ---------- hero ---------- */
-.hero{min-height:min(calc(100svh - 76px),880px);display:grid;align-items:start;padding:clamp(24px,4vh,48px) 0 clamp(40px,6vh,72px)}
+.hero{min-height:min(calc(100svh - 84px),880px);display:grid;align-items:start;padding:clamp(24px,4vh,48px) 0 clamp(40px,6vh,72px)}
 .hero>.wrap{width:100%}
 .hero .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:stretch}
 .hero-copy{grid-column:1 / span 7;display:flex;flex-direction:column;justify-content:center;min-width:0}
@@ -126,7 +126,18 @@ svg.i{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-
 .blind-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;padding:0 4px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--on-green-2);font-weight:700}
 .blind-foot output{font-variant-numeric:tabular-nums;min-width:4.2em;text-align:center}
 .window.rolling .strip{filter:url(#vblur)}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;align-items:center}
+.hero-cta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;margin-top:20px;align-items:stretch}
+.btn-hero{min-height:66px;padding:0 10px 0 30px;justify-content:space-between;font-size:1.15rem;letter-spacing:.005em;box-shadow:inset 0 1px 0 rgba(255,246,220,.55),0 18px 34px -16px rgba(201,171,107,.55)}
+.btn-hero .lbl{margin-right:auto}
+.btn-hero .chip{font-family:var(--display);font-weight:800;font-size:1.45rem;line-height:1;background:var(--linen);color:var(--brass-hi);padding:7px 12px 6px;border-radius:999px}
+.btn-hero .chip:empty{display:none}
+.btn-hero .go{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--linen);color:var(--brass-hi);transition:transform .3s var(--ease-out)}
+.btn-hero:hover .go{transform:translateX(3px)}
+.hero-cta .btn-ghost{min-height:66px}
+.trust{margin-top:14px;font-size:.92rem;color:var(--on-green-2);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.trust b{color:var(--on-green);font-weight:700}
+.trust a{color:var(--on-green-2)}
+.trust a:hover{color:var(--brass-hi)}
 
 /* hero photo: arched window */
 .hero-photo{grid-column:8 / span 5;position:relative;margin:0;min-height:520px}
@@ -233,6 +244,8 @@ section{position:relative}
 .quote{border-top:1px solid var(--lime-line);padding:28px 0;display:grid;gap:14px}
 .quote:last-child{border-bottom:1px solid var(--lime-line)}
 .quote blockquote{margin:0;font-size:clamp(1.15rem,1.05rem + .4vw,1.4rem);line-height:1.45;font-weight:400;max-width:40ch}
+.rating .rec{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(2.6rem,1.8rem + 2.4vw,4rem);line-height:.9;color:var(--green-800)}
+.rating footer a{color:var(--ink);font-weight:700}
 .quote footer{display:flex;gap:14px;align-items:center;flex-wrap:wrap;color:var(--ink-2);font-size:.9rem}
 
 /* ---------- timetable ---------- */
@@ -359,8 +372,8 @@ dialog.book[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
 }
 @media (max-width:760px){
   body{font-size:1rem;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
-  .rail .wrap{height:64px;gap:14px}
-  .logo{width:78px}
+  .rail .wrap{height:70px;gap:14px}
+  .logo{width:60px}
   .rail .tel,.rail .btn{display:none}
   .status{font-size:.82rem}
   .hero{padding-top:20px}
@@ -375,8 +388,9 @@ dialog.book[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
   .wind{width:38px;height:32px}
   .blind-foot{font-size:.62rem;letter-spacing:.1em}
   .blind-foot span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .hero-cta .btn{flex:1 1 100%}
+  .hero-cta{grid-template-columns:minmax(0,1fr)}
   .hero-cta .btn-ghost{display:none}
+  .btn-hero{min-height:62px;padding-left:22px;font-size:1.08rem}
   .fare .lead{display:none}
   .fare{grid-template-columns:minmax(0,1fr) 64px 32px;gap:12px;padding:14px 2px}
   .fare .dur{grid-column:1;grid-row:2;max-width:200px}
@@ -473,9 +487,10 @@ dialog.book[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
       </div>
 
       <div class="hero-cta">
-        <button class="btn btn-brass" id="bookThis" data-book-current>Book this cut <span class="price" id="bookThisPrice">· $59</span></button>
+        <button class="btn btn-brass btn-hero" id="bookThis" data-book-current><span class="lbl" id="bookThisLabel">Book this cut</span><span class="chip" id="bookThisPrice">$59</span><span class="go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span></button>
         <a class="btn btn-ghost" href="tel:0413393140"><svg class="i"><use href="#i-phone"/></svg>Call 0413 393 140</a>
       </div>
+      <p class="trust"><b>100% recommend</b><span>from 6 reviews on</span><a href="https://www.facebook.com/Mrbaileysbarbershop/reviews" target="_blank" rel="noopener">Facebook</a></p>
     </div>
 
     <figure class="hero-photo">
@@ -555,6 +570,10 @@ dialog.book[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
     </div>
     <div class="quotes">
       <h2 class="h2" id="h-word">Word around Wendouree.</h2>
+      <div class="quote rating">
+        <p class="rec">100% recommend</p>
+        <footer><span>From 6 reviews on the Mr. Baileys Facebook page</span><a href="https://www.facebook.com/Mrbaileysbarbershop/reviews" target="_blank" rel="noopener">Read them on Facebook</a></footer>
+      </div>
       <div class="quote">
         <span class="ph">Placeholder review · replace with a real one</span>
         <blockquote>“[Sample review: best skin fade I've had in Ballarat, and he actually listens to what you want.]”</blockquote>
@@ -564,11 +583,6 @@ dialog.book[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
         <span class="ph">Placeholder review · replace with a real one</span>
         <blockquote>“[Sample review: both my boys get their cuts here. Easy to book after school, and they actually sit still.]”</blockquote>
         <footer><span>[Customer name]</span><span>[Google / Facebook]</span></footer>
-      </div>
-      <div class="quote">
-        <span class="ph">Placeholder rating · replace with real figure</span>
-        <blockquote>“[Sample review: booked online in a minute, in and out on time, sharp result.]”</blockquote>
-        <footer><span>[★ rating and review count]</span><span>[Source]</span></footer>
       </div>
     </div>
   </div>
@@ -795,8 +809,8 @@ dialog.book[open]{display:grid;grid-template-rows:auto minmax(0,1fr)}
     const f = FR[cur];
     count.textContent = `${cur + 1} / ${FR.length}`;
     strip.querySelectorAll('li').forEach((li, i) => li.setAttribute('aria-hidden', i === cur ? 'false' : 'true'));
-    priceEl.textContent = f.s ? `· ${money(f.s.p)}` : '';
-    document.getElementById('bookThis').firstChild.textContent = f.s ? 'Book this cut ' : 'Book a cut ';
+    priceEl.textContent = f.s ? money(f.s.p) : '';
+    document.getElementById('bookThisLabel').textContent = f.s ? `Book ${f.s.blind}` : 'Book a cut';
     live.textContent = f.s ? `${f.s.name}, ${fmtMin(f.s.m)}, ${money(f.s.p)}` : 'Carpenter Street, Wendouree';
   }
   function roll(to, dur) {
